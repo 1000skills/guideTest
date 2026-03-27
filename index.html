@@ -708,6 +708,89 @@
     </div>
   </section>
 
+  <!-- GitHub vs 로컬 비교 -->
+  <section style="padding: 60px 0; border-bottom: 1px solid var(--border);">
+    <div class="section-label">실행 방법 비교</div>
+    <div class="section-title">GitHub Actions vs 로컬 실행</div>
+    <p style="font-size:14px; color:var(--text-muted); margin-bottom:24px;">capture.py는 GitHub Actions 외에 내 PC에서 직접 실행할 수도 있어요. 상황에 따라 선택하세요.</p>
+
+    <div class="secrets-table-wrap">
+      <table class="secrets-table">
+        <thead>
+          <tr>
+            <th>항목</th>
+            <th>GitHub Actions</th>
+            <th>로컬 실행</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="color:var(--text-muted);">실행 주체</td>
+            <td>GitHub 서버</td>
+            <td>내 PC</td>
+          </tr>
+          <tr>
+            <td style="color:var(--text-muted);">PC 전원</td>
+            <td style="color:var(--accent);">불필요 ✅</td>
+            <td>켜져 있어야 함</td>
+          </tr>
+          <tr>
+            <td style="color:var(--text-muted);">자동 실행</td>
+            <td style="color:var(--accent);">스케줄 설정으로 완전 자동 ✅</td>
+            <td>작업 스케줄러 별도 설정 필요</td>
+          </tr>
+          <tr>
+            <td style="color:var(--text-muted);">인터넷 연결</td>
+            <td style="color:var(--accent);">불필요 ✅</td>
+            <td>필요</td>
+          </tr>
+          <tr>
+            <td style="color:var(--text-muted);">초기 설정</td>
+            <td>GitHub 저장소, Secrets 등록</td>
+            <td>Python, 라이브러리 설치</td>
+          </tr>
+          <tr>
+            <td style="color:var(--text-muted);">비용</td>
+            <td>무료 (월 2,000분)</td>
+            <td>무료</td>
+          </tr>
+          <tr>
+            <td style="color:var(--text-muted);">토큰 보관</td>
+            <td>GitHub Secrets (안전)</td>
+            <td>코드 또는 환경변수에 직접 저장</td>
+          </tr>
+          <tr>
+            <td style="color:var(--text-muted);">실행 로그</td>
+            <td>Actions 탭에서 확인</td>
+            <td>터미널에서 직접 확인</td>
+          </tr>
+          <tr>
+            <td style="color:var(--text-muted);">유지 관리</td>
+            <td>GitHub에 파일 업로드</td>
+            <td>로컬 파일 직접 수정</td>
+          </tr>
+          <tr>
+            <td style="color:var(--text-muted);">적합한 상황</td>
+            <td style="color:var(--accent);">장기 운영, 팀 공유 환경 ✅</td>
+            <td>일회성 테스트, 개인 사용</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tip" style="margin-top:20px;">
+      <span class="tip-icon">💡</span>
+      <span>로컬에서 바로 실행하려면 cmd에서 아래 명령어만 입력하면 돼요.<br>
+        <code style="display:inline-block; margin-top:8px; line-height:2;">
+          set NOTION_TOKEN=ntn_xxx...&nbsp;&nbsp;
+          set SOURCE_PAGE_ID=32자리ID&nbsp;&nbsp;
+          set ARCHIVE_PAGE_ID=32자리ID&nbsp;&nbsp;
+          python capture.py
+        </code>
+      </span>
+    </div>
+  </section>
+
   <!-- 사전 준비 -->
   <section class="prep-section">
     <div class="section-label">사전 준비</div>
@@ -966,7 +1049,7 @@ https://www.notion.so/<span class="st">3273a4aad721806e99bdf5ae28c741b3</span>
       </div>
       <div class="timeline-item">
         <h4>아카이브 페이지에 누적 저장</h4>
-        <p>날짜 제목 + 표 형태로 아카이브 페이지 하단에 자동 추가. 매월 누적.</p>
+        <p>날짜 제목 + 표 형태로 아카이브 페이지 하단에 자동 추가. 매월 누적됨.</p>
       </div>
     </div>
   </section>
