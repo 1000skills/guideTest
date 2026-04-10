@@ -900,6 +900,59 @@ https://www.notion.so/<span class="st">3273a4aad721806e99bdf5ae28c741b3</span>
     <div class="step">
       <div class="step-num">05</div>
       <div class="step-body">
+        <h3>저장소 클론하기</h3>
+        <p>생성한 GitHub 저장소를 내 컴퓨터로 복사해요. 이후 로컬에서 파일을 만들고 수정할 수 있어요.</p>
+        <div class="code-block">
+          <pre><span class="cm"># GitHub 저장소 주소 복사 후 클론</span>
+git clone https://github.com/<span class="st">사용자명</span>/<span class="st">notion-monthly-capture</span>.git
+
+<span class="cm"># 클론된 폴더로 이동</span>
+cd notion-monthly-capture</pre>
+        </div>
+        <div class="tip">
+          <span class="tip-icon">💡</span>
+          <span>저장소 주소는 GitHub 저장소 페이지에서 <strong>Code</strong> 버튼 클릭 → <strong>HTTPS</strong> 탭에서 복사할 수 있어요.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 6 -->
+    <div class="step">
+      <div class="step-num">06</div>
+      <div class="step-body">
+        <h3>브랜치 만들고 작업하기</h3>
+        <p>변경사항을 main 브랜치에 직접 올리지 않고, 별도 브랜치에서 작업한 뒤 병합하는 방식으로 안전하게 관리할 수 있어요.</p>
+        <div class="code-block">
+          <pre><span class="cm"># 새 브랜치 생성 및 이동</span>
+git checkout -b <span class="st">feature/add-capture-script</span>
+
+<span class="cm"># 파일 추가 후 스테이징</span>
+git add capture.py
+git add .github/workflows/capture.yml
+
+<span class="cm"># 커밋</span>
+git commit -m "Add notion capture script and workflow"
+
+<span class="cm"># 원격 저장소로 푸시</span>
+git push -u origin <span class="st">feature/add-capture-script</span></pre>
+        </div>
+        <ul class="step-items">
+          <li><code>git checkout -b 브랜치명</code> — 새 브랜치를 만들고 바로 이동</li>
+          <li><code>git add</code> — 변경된 파일을 커밋 준비 상태로 올림</li>
+          <li><code>git commit -m "메시지"</code> — 변경 내용을 저장소에 기록</li>
+          <li><code>git push -u origin 브랜치명</code> — 로컬 브랜치를 원격에 올림</li>
+        </ul>
+        <div class="notice">
+          <span class="notice-icon">⚠️</span>
+          <span>GitHub에 push한 뒤 저장소 페이지에서 <strong>Compare &amp; pull request</strong> 버튼으로 main 브랜치에 병합할 수 있어요.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 7 -->
+    <div class="step">
+      <div class="step-num">07</div>
+      <div class="step-body">
         <h3>두 파일 이해하고 준비하기</h3>
         <p>업로드할 파일은 총 2개예요. 각 파일의 역할을 이해하고 준비해주세요.</p>
 
@@ -955,9 +1008,9 @@ https://www.notion.so/<span class="st">3273a4aad721806e99bdf5ae28c741b3</span>
       </div>
     </div>
 
-    <!-- Step 6 -->
+    <!-- Step 8 -->
     <div class="step">
-      <div class="step-num">06</div>
+      <div class="step-num">08</div>
       <div class="step-body">
         <h3>파일 업로드</h3>
         <p>두 개의 파일을 저장소에 업로드해요.</p>
@@ -972,9 +1025,9 @@ https://www.notion.so/<span class="st">3273a4aad721806e99bdf5ae28c741b3</span>
       </div>
     </div>
 
-    <!-- Step 7 -->
+    <!-- Step 9 -->
     <div class="step">
-      <div class="step-num">07</div>
+      <div class="step-num">09</div>
       <div class="step-body">
         <h3>GitHub Secrets 등록</h3>
         <p>민감한 정보(토큰, 페이지 ID)는 코드에 직접 입력하지 않고 Secrets에 안전하게 저장해요. 코드가 공개되더라도 이 값들은 절대 노출되지 않아요.</p>
@@ -1010,9 +1063,9 @@ https://www.notion.so/<span class="st">3273a4aad721806e99bdf5ae28c741b3</span>
       </div>
     </div>
 
-    <!-- Step 8 -->
+    <!-- Step 10 -->
     <div class="step">
-      <div class="step-num">08</div>
+      <div class="step-num">10</div>
       <div class="step-body">
         <h3>수동 테스트 실행</h3>
         <p>말일을 기다리지 않고 지금 바로 테스트해볼 수 있어요.</p>
